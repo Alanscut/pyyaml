@@ -78,7 +78,7 @@ class EventsLoader(yaml.Loader):
         if class_name in ['SequenceStartEvent', 'MappingStartEvent']:
             mapping.setdefault('implicit', True)
         if class_name == 'ScalarEvent':
-            mapping.setdefault('implicit', (False, False))
+            mapping.setdefault('implicit', (False, True))
             mapping.setdefault('value', '')
         value = getattr(yaml, class_name)(**mapping)
         return value
