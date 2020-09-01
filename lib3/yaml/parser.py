@@ -325,7 +325,7 @@ class Parser:
                 if self.check_token(ScalarToken):
                     token = self.get_token()
                     end_mark = token.end_mark
-                    if (token.plain and tag is None) or tag == '!':
+                    if token.plain and tag is None:
                         implicit = (True, False)
                     elif tag is None:
                         implicit = (False, True)
